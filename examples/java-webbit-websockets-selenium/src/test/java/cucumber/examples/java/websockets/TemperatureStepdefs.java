@@ -8,19 +8,19 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.Assert.assertEquals;
 
 public class TemperatureStepdefs {
-    private final WebDriver webDriver;
+    private final IndexPageObject indexPageObject;
 
     public TemperatureStepdefs(SharedDriver webDriver) {
-        this.webDriver = webDriver;
+        this.indexPageObject = new IndexPageObject(webDriver);
     }
 
     @When("^I enter (.+) Celcius$")
     public void i_enter_Celcius(double celcius) {
-        webDriver.findElement(By.id("celcius")).sendKeys(String.valueOf(celcius));
+        indexPageObject.insertCelcius(celcius);
     }
 
     @Then("^I should see (.+) Fahrenheit$")
     public void i_should_see_Fahrenheit(double fahrenheit) {
-        assertEquals(String.valueOf(fahrenheit), webDriver.findElement(By.id("fahrenheit")).getAttribute("value"));
+        assertEquals(String.valueOf(fahrenheit), indexPageObject.getFahrenheit());
     }
 }

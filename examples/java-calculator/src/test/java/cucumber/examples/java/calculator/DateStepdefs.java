@@ -23,6 +23,11 @@ public class DateStepdefs {
         result = calculator.isDateInThePast(date);
     }
 
+    @When("^I ask if (.+) is in the future$")
+    public void I_ask_if_date_is_in_the_future(Date date) {
+        result = calculator.isDateInTheFuture(date);
+    }
+
     @Then("^the result should be (.+)$")
     public void the_result_should_be(String expectedResult) {
         assertEquals(expectedResult, result);

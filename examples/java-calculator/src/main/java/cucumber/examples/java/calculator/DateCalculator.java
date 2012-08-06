@@ -12,4 +12,8 @@ public class DateCalculator {
     public String isDateInThePast(Date date) {
         return (date.before(now)) ? "yes" : "no";
     }
+
+    public String isDateInTheFuture(Date date) {
+        return (date.before(now)) ? "no" : "yes";
+    }
 }

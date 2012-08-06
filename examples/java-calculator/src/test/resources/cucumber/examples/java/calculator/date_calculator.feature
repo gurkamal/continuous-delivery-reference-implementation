@@ -3,7 +3,19 @@ Feature: Dates with different date formats
   corresponding step definition method accordingly. Notice that this currently does not work for
   List<Object> parameters (tables).
 
+
   Scenario: Determine past date
+  W
     Given today is 2011-01-02
     When I ask if 01/01/2011 is in the past
     Then the result should be yes
+
+  Scenario: Determine future date
+    Given today is 2011-01-02
+    When I ask if 01/01/2012 is in the future
+    Then the result should be yes
+
+  Scenario: Negate past date
+    Given today is 2011-01-02
+    When I ask if 01/01/2012 is in the past
+    Then the result should be no
