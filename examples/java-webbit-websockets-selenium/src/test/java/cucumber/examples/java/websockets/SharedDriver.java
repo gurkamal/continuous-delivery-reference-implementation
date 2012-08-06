@@ -21,34 +21,37 @@ import java.io.ByteArrayInputStream;
  * <p/>
  * This class can be shared across step definitions via dependency injection.
  */
-public class SharedDriver extends EventFiringWebDriver {
-    private static final WebDriver REAL_DRIVER = new ChromeDriver();
 
-    static {
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                REAL_DRIVER.close();
-            }
-        });
-    }
+//public class SharedDriver extends EventFiringWebDriver {
+public class SharedDriver {
+    private static WebDriver REAL_DRIVER = null;
+//    private static final WebDriver REAL_DRIVER = new ChromeDriver();
+//
+//    static {
+//        Runtime.getRuntime().addShutdownHook(new Thread() {
+//            @Override
+//            public void run() {
+//                REAL_DRIVER.close();
+//            }
+//        });
+//    }
 
     public SharedDriver() {
-        super(REAL_DRIVER);
+//        super(REAL_DRIVER);
     }
 
     @Before
     public void deleteAllCookies() {
-        manage().deleteAllCookies();
+//        manage().deleteAllCookies();
     }
 
     @After
     public void embedScreenshot(ScenarioResult result) {
-        try {
-            byte[] screenshot = this.getScreenshotAs(OutputType.BYTES);
-            result.embed(new ByteArrayInputStream(screenshot), "image/png");
-        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
-            System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-        }
+//        try {
+//            byte[] screenshot = this.getScreenshotAs(OutputType.BYTES);
+//            result.embed(new ByteArrayInputStream(screenshot), "image/png");
+//        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
+//            System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+//        }
     }
 }

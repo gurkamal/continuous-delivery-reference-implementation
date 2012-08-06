@@ -15,7 +15,7 @@ public class IndexPageObject {
 
 
 
-    private final WebDriver webDriver;
+    private final SharedDriver webDriver;
 
     public IndexPageObject(SharedDriver webDriver) {
         this.webDriver = webDriver;
@@ -23,12 +23,13 @@ public class IndexPageObject {
 
     public void insertCelcius(double celcius)
     {
-        webDriver.findElement(By.id("celcius")).sendKeys(String.valueOf(celcius));
+//        webDriver.findElement(By.id("celcius")).sendKeys(String.valueOf(celcius));
     }
 
     public String getFahrenheit()
     {
-        return webDriver.findElement(By.id("fahrenheit")).getAttribute("value");
+        return null;
+//        return webDriver.findElement(By.id("fahrenheit")).getAttribute("value");
     }
 
 }
