@@ -2,10 +2,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ishisystems</groupId>
     <artifactId>continuous-delivery</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <name>Continuus Delivery</name>
-    <url></url>
+    <url />
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -279,6 +279,7 @@
                 <version>2.12</version>
                 <configuration>
                     <argLine>-Duser.language=en</argLine>
+                    <argLine>-Dwebdriver.chrome.driver=/usr/bin/chromedriver</argLine>
                     <argLine>-Xmx1024m</argLine>
                     <argLine>-XX:MaxPermSize=256m</argLine>
                     <useFile>false</useFile>
@@ -312,7 +313,16 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.8.1</version>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+
         </plugins>
+
+
 
         <!--<extensions>
             <extension>
@@ -322,5 +332,11 @@
             </extension>
         </extensions>-->
     </build>
+
+  <scm>
+    <connection>scm:svn:http://svn.sonatype.org/spice/tags/continuous-delivery-1.0</connection>
+    <developerConnection>scm:svn:https://svn.sonatype.org/spice/tags/continuous-delivery-1.0</developerConnection>
+    <url>http://svn.sonatype.org/spice/tags/continuous-delivery-1.0</url>
+  </scm>
 </project>
 
