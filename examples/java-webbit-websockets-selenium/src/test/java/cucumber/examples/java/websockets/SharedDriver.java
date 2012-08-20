@@ -30,7 +30,7 @@ public class SharedDriver extends EventFiringWebDriver {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                REAL_DRIVER.close();
+                REAL_DRIVER.quit();
             }
         });
     }
