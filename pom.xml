@@ -101,13 +101,13 @@
             </dependency>
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-chrome-driver</artifactId>
-                <version>2.24.1</version>
+                <artifactId>selenium-firefox-driver</artifactId>
+                <version>2.25.0</version>
             </dependency>
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-server</artifactId>
-                <version>2.24.1</version>
+                <version>2.25.0</version>
             </dependency>
             <dependency>
                 <groupId>org.webbitserver</groupId>
@@ -279,7 +279,6 @@
                 <version>2.12</version>
                 <configuration>
                     <argLine>-Duser.language=en</argLine>
-                    <argLine>-Dwebdriver.chrome.driver=/usr/bin/chromedriver</argLine>
                     <argLine>-Xmx1024m</argLine>
                     <argLine>-XX:MaxPermSize=256m</argLine>
                     <useFile>false</useFile>
