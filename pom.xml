@@ -127,9 +127,17 @@
             <id>codehaus</id>
             <url>http://repository.codehaus.org</url>
         </repository>
+        <repository>
+            <id>codehaus2</id>
+            <url>http://snapshots.repository.codehaus.org/</url>
+        </repository>
 		<repository>
             <id>maven</id>
             <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-releases</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
         </repository>
     </repositories>
 
@@ -139,7 +147,19 @@
     -->
     <pluginRepositories>
         <pluginRepository>
+            <id>maven2</id>
+            <url>http://repo1.maven.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
             <id>sonatype.org</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>sonatype-nexus-public</id>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>sonatype-nexus-releases</id>
             <url>https://oss.sonatype.org/content/repositories/releases</url>
         </pluginRepository>
     </pluginRepositories>
