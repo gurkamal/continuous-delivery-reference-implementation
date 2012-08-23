@@ -182,6 +182,14 @@
                 <module>examples/java-calculator</module>
 				<module>examples/java-webbit-websockets-selenium</module>
             </modules>
+            <properties>
+                <sonar.jdbc.url>jdbc:mysql://10.50.101.42:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true</sonar.jdbc.url>
+                <sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+                <sonar.jdbc.username>sonar</sonar.jdbc.username>
+                <sonar.jdbc.password>sonar</sonar.jdbc.password>
+                <!-- SERVER ON A REMOTE HOST -->
+                <sonar.host.url>http://10.50.101.42:9000</sonar.host.url>
+            </properties>
         </profile>
         <profile>
             <id>sonar</id>
